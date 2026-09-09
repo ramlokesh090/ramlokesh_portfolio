@@ -1,0 +1,285 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="Ram Lokesh — Java Full Stack Developer, Java Backend Developer and React.js / Frontend Developer">
+<title>Ram Lokesh — Software Engineer</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap');
+
+:root{
+ --bg:#05050a;--bg2:#080b12;--card:#0b0e17cc;--line:#ffffff12;--text:#f7f9ff;--muted:#8790a5;
+ --cyan:#55e6ff;--blue:#5d8dff;--violet:#9b6cff;--pink:#ff5fcf;--orange:#ff9d5c;--green:#67e7a4;--yellow:#ffe16a;
+ --radius:24px;--ease:cubic-bezier(.2,.75,.2,1)
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--text);font-family:Inter,Arial,sans-serif;overflow-x:hidden}
+a{text-decoration:none;color:inherit}
+button{font:inherit}
+::selection{background:#7e70ff55}
+#particles{position:fixed;inset:0;width:100%;height:100%;z-index:-20;background:#05050a}
+.bg-orb{position:fixed;border-radius:50%;filter:blur(80px);pointer-events:none;z-index:-15;opacity:.35;mix-blend-mode:screen}
+.orb1{width:420px;height:420px;background:#4d78ff;left:-180px;top:8%}.orb2{width:390px;height:390px;background:#d34fff;right:-170px;top:30%}.orb3{width:360px;height:360px;background:#16e0d0;left:35%;bottom:-220px}
+.grid-bg{position:fixed;inset:0;z-index:-17;opacity:.25;background-image:linear-gradient(#ffffff06 1px,transparent 1px),linear-gradient(90deg,#ffffff06 1px,transparent 1px);background-size:55px 55px;mask-image:linear-gradient(to bottom,#000,transparent 82%)}
+.noise{position:fixed;inset:0;z-index:50;pointer-events:none;opacity:.025;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence baseFrequency='.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")}
+
+.wrap{width:min(1180px,92%);margin:auto}
+.nav{position:fixed;top:16px;left:50%;transform:translateX(-50%);width:min(1160px,94%);height:64px;z-index:100;border:1px solid #ffffff12;background:#080a10b8;backdrop-filter:blur(24px);border-radius:18px;box-shadow:0 15px 50px #0007}
+.navin{height:100%;display:flex;align-items:center;justify-content:space-between;padding:0 14px 0 17px}
+.brand{display:flex;align-items:center;gap:10px}.brandmark{width:38px;height:38px;border-radius:12px;display:grid;place-items:center;font:700 12px "Space Grotesk";background:linear-gradient(135deg,#5c8fff,#a56cff 55%,#ff63c9);box-shadow:0 0 25px #7d78ff44}.brand b{font:700 13px "Space Grotesk";display:block}.brand small{font-size:7px;color:#737c90}
+.links{display:flex;gap:23px}.links a{font-size:9px;color:#7f899d;transition:.25s}.links a:hover{color:#fff}
+.navbtn{padding:10px 14px;border-radius:11px;border:1px solid #ffffff18;background:#ffffff08;font-size:8px;font-weight:800}.navbtn:hover{border-color:#6e91ff66;box-shadow:0 0 22px #627fff20}
+.menu{display:none;border:1px solid #ffffff18;background:#ffffff08;color:#fff;border-radius:10px;width:38px;height:38px}
+
+.hero{min-height:940px;padding-top:145px;display:grid;align-items:center}
+.hero-grid{display:grid;grid-template-columns:1.02fr .98fr;gap:55px;align-items:center}
+.eyebrow{display:flex;gap:8px;align-items:center;flex-wrap:wrap;margin-bottom:20px}.live{font-size:8px;font-weight:800;padding:7px 10px;border:1px solid #67e7a444;background:#67e7a40d;color:#79e9ae;border-radius:30px}.live i{display:inline-block;width:6px;height:6px;background:#67e7a4;border-radius:50%;margin-right:5px;box-shadow:0 0 12px #67e7a4}.rolechip{font-size:8px;color:#94a3bb;border:1px solid #ffffff12;background:#ffffff06;padding:7px 10px;border-radius:30px}
+.hero h1{font:700 clamp(56px,8vw,101px)/.88 "Space Grotesk";letter-spacing:-6px;margin-bottom:22px}
+.hero h1 .rainbow{background:linear-gradient(100deg,#fff 12%,#63e4ff 38%,#7c9bff 55%,#bd73ff 72%,#ff68c9 92%);background-size:200%;-webkit-background-clip:text;color:transparent;animation:grad 7s linear infinite}
+@keyframes grad{to{background-position:200%}}
+.hero h1 .wave{font-size:.42em;letter-spacing:0;vertical-align:middle}
+.role{font:600 21px "Space Grotesk";margin-bottom:14px;color:#dfe8ff}.role b{color:#6edfff}.role span{color:#929db0}
+.lead{font-size:12px;color:#939db0;line-height:1.9;max-width:625px}
+.targets{display:flex;gap:7px;flex-wrap:wrap;margin:20px 0}.target{font-size:8px;border:1px solid #ffffff12;background:#ffffff06;padding:8px 10px;border-radius:30px;color:#aeb9cb}.target strong{color:#fff}
+.actions{display:flex;align-items:center;gap:8px;flex-wrap:wrap;margin-top:23px}.btn{padding:13px 17px;border-radius:12px;font-size:9px;font-weight:800;transition:.3s}.btn:hover{transform:translateY(-3px)}.primary{background:linear-gradient(100deg,#5d91ff,#9a6dff);box-shadow:0 14px 35px #7775ff26}.secondary{border:1px solid #ffffff18;background:#ffffff07}.social{width:40px;height:40px;border:1px solid #ffffff15;background:#ffffff07;border-radius:50%;display:grid;place-items:center;font-size:9px;font-weight:800;color:#aeb8c9}
+.facts{display:flex;gap:28px;margin-top:34px;padding-top:22px;border-top:1px solid #ffffff10}.fact b{display:block;font:700 20px "Space Grotesk";background:linear-gradient(90deg,#fff,#73cfff);-webkit-background-clip:text;color:transparent}.fact span{font-size:7px;color:#687388}
+
+.scene{height:600px;position:relative;perspective:1300px;transform-style:preserve-3d}
+.stage{position:absolute;inset:0;border:1px solid #ffffff13;border-radius:32px;background:radial-gradient(circle at 50% 45%,#263c7220,transparent 33%),radial-gradient(circle at 20% 85%,#18d9c615,transparent 30%),radial-gradient(circle at 90% 10%,#e65bcb12,transparent 30%),linear-gradient(145deg,#101523e0,#080a10e8);backdrop-filter:blur(8px);overflow:hidden;transform-style:preserve-3d;box-shadow:inset 0 0 100px #7187ff08,0 40px 100px #0008;transition:transform .25s var(--ease)}
+.stage:after{content:"";position:absolute;inset:0;background:radial-gradient(circle at 50% 50%,#ffffff08,transparent 45%)}
+.stagetop{position:absolute;top:20px;left:22px;right:22px;display:flex;justify-content:space-between;z-index:5}.stagetop span{font:500 7px "DM Mono";color:#637087;letter-spacing:1px}.signal{display:flex;gap:5px}.signal i{width:5px;height:5px;border-radius:50%;background:#ff6666}.signal i:nth-child(2){background:#ffe06b}.signal i:nth-child(3){background:#6ee5a1}
+.ring{position:absolute;left:50%;top:50%;border:1px solid #7c9eff22;border-radius:50%;transform:translate(-50%,-50%) rotateX(66deg);box-shadow:0 0 60px #6b83ff0a}.r1{width:350px;height:350px}.r2{width:255px;height:255px;border-color:#59e8e422;transform:translate(-50%,-50%) rotateX(66deg) rotateZ(55deg)}.r3{width:445px;height:445px;border-color:#e86cff1c;transform:translate(-50%,-50%) rotateX(66deg) rotateZ(-32deg)}
+.core3d{position:absolute;left:50%;top:50%;width:145px;height:145px;transform:translate(-50%,-50%) rotateX(-12deg) rotateY(-18deg);transform-style:preserve-3d;animation:core 5s ease-in-out infinite}
+@keyframes core{50%{transform:translate(-50%,-55%) rotateX(8deg) rotateY(18deg)}}
+.cube,.cube:before,.cube:after{position:absolute;width:115px;height:115px}.cube{left:15px;top:15px;transform-style:preserve-3d;transform:rotateX(55deg) rotateZ(45deg)}.cube:before,.cube:after{content:"";border:1px solid #8bb0ff66;background:linear-gradient(135deg,#243a70aa,#0b1022dd);box-shadow:inset 0 0 30px #6f87ff1c}.cube:before{transform:translateZ(58px)}.cube:after{transform:rotateY(90deg) translateZ(58px)}
+.corelabel{position:absolute;inset:0;display:grid;place-items:center;z-index:4;text-align:center;transform:translateZ(80px)}.corelabel b{font:700 28px "Space Grotesk"}.corelabel small{display:block;font:500 7px "DM Mono";color:#7bdfff;letter-spacing:2px;margin-top:3px}
+.float{position:absolute;z-index:10;padding:11px 13px;border:1px solid #ffffff18;border-radius:15px;background:#0b111ce8;backdrop-filter:blur(15px);display:flex;align-items:center;gap:9px;box-shadow:0 18px 40px #0008;animation:float 5s ease-in-out infinite}.float .icon{width:31px;height:31px;border-radius:9px;display:grid;place-items:center;font-weight:800;background:#ffffff08;border:1px solid #ffffff14}.float b{font-size:8px}.float small{display:block;font-size:6px;color:#68758a;margin-top:3px}.fjava{left:8%;top:21%}.freact{right:7%;top:28%;animation-delay:-1.2s}.fspring{left:6%;bottom:25%;animation-delay:-2.2s}.fdb{right:8%;bottom:19%;animation-delay:-3.1s}.fapi{right:31%;top:9%;animation-delay:-.6s}.fai{left:32%;bottom:6%;animation-delay:-1.8s}
+.fjava .icon{color:#ff8d68}.freact .icon{color:#64e8ff}.fspring .icon{color:#6fe28c}.fdb .icon{color:#72baff}.fapi .icon{color:#bf8aff}.fai .icon{color:#65e6b5}
+@keyframes float{50%{transform:translateY(-13px) translateZ(20px) rotateY(2deg)}}
+.beam{position:absolute;height:1px;background:linear-gradient(90deg,transparent,#7e9cff88,transparent);transform-origin:left;z-index:3}.b1{width:200px;left:23%;top:32%;transform:rotate(18deg)}.b2{width:180px;right:22%;top:36%;transform:rotate(157deg)}.b3{width:200px;left:20%;bottom:35%;transform:rotate(-18deg)}.b4{width:190px;right:21%;bottom:30%;transform:rotate(204deg)}
+.hud{position:absolute;bottom:19px;left:20px;right:20px;display:flex;justify-content:space-between;z-index:6;font:500 7px "DM Mono";color:#627188}.hud strong{color:#a8b7cc}.scan{width:130px;height:4px;border-radius:10px;background:#ffffff09;overflow:hidden}.scan i{display:block;width:55%;height:100%;background:linear-gradient(90deg,#54e6ff,#a96cff,#ff61c7);animation:scan 2.4s ease-in-out infinite alternate}@keyframes scan{to{width:95%}}
+
+.section{padding:120px 0}.head{display:flex;justify-content:space-between;align-items:end;gap:30px;margin-bottom:38px}.label{font:500 8px "DM Mono";letter-spacing:2px;color:#68758a;text-transform:uppercase}.head h2{font:700 clamp(34px,5vw,55px)/1 "Space Grotesk";letter-spacing:-2px;margin-top:8px}.head p{max-width:410px;color:#7f8a9f;font-size:10px;line-height:1.8}
+
+.bento{display:grid;grid-template-columns:1.1fr .9fr .9fr;gap:12px}.panel{border:1px solid #ffffff11;border-radius:var(--radius);background:linear-gradient(145deg,#0c111bcc,#080b11cc);box-shadow:0 25px 70px #0006;overflow:hidden}.about{grid-row:span 2;padding:32px;min-height:420px;position:relative}.about:before{content:"";position:absolute;width:260px;height:260px;border-radius:50%;right:-100px;bottom:-100px;background:#7b68ff18;filter:blur(20px)}.about h3{font:700 29px/1.15 "Space Grotesk";max-width:450px;margin:15px 0}.about p{font-size:10px;color:#8490a3;line-height:1.9;max-width:480px}.aboutquote{margin-top:30px;padding:17px;border:1px solid #ffffff12;background:#ffffff05;border-radius:14px;color:#bfcbe0;font-size:9px;line-height:1.6}.mini{padding:25px;min-height:202px;position:relative}.mini .mi{width:38px;height:38px;border-radius:12px;display:grid;place-items:center;background:#ffffff08;border:1px solid #ffffff12;margin-bottom:17px;font-weight:800}.mini h3{font:600 16px "Space Grotesk";margin-bottom:8px}.mini p{font-size:8px;color:#7f8a9d;line-height:1.75}.accent-cyan .mi{color:var(--cyan);box-shadow:0 0 28px #55e6ff16}.accent-pink .mi{color:var(--pink);box-shadow:0 0 28px #ff5fcf16}.accent-green .mi{color:var(--green);box-shadow:0 0 28px #67e7a416}.accent-orange .mi{color:var(--orange);box-shadow:0 0 28px #ff9d5c16}
+
+.stack{padding:27px;margin-top:12px}.stacktitle{display:flex;justify-content:space-between;align-items:center;margin-bottom:17px}.stacktitle b{font:600 12px "Space Grotesk"}.stacktitle span{font:500 7px "DM Mono";color:#627087}.stackrow{display:grid;grid-template-columns:105px 1fr;gap:12px;padding:13px 0;border-top:1px solid #ffffff0d}.stackrow label{font:500 7px "DM Mono";text-transform:uppercase;color:#627087}.tags{display:flex;flex-wrap:wrap;gap:6px}.tag{font-size:7px;color:#b9c6d9;padding:7px 9px;border:1px solid #ffffff10;background:#ffffff05;border-radius:9px}.tag i{display:inline-grid;place-items:center;width:18px;height:18px;margin-right:5px;border-radius:5px;background:#ffffff08;font-style:normal;font-weight:800;color:#75dfff}.tag:nth-child(3n) i{color:#c68aff}.tag:nth-child(4n) i{color:#ff9b6c}.tag:nth-child(5n) i{color:#71e9a9}
+
+.timeline{padding:32px}.job{display:grid;grid-template-columns:160px 1fr;gap:30px}.date{font:500 8px/1.8 "DM Mono";color:#637086}.jobbody{border-left:1px solid #ffffff16;padding-left:30px;position:relative}.jobbody:before{content:"";position:absolute;left:-5px;top:4px;width:9px;height:9px;border-radius:50%;background:linear-gradient(135deg,#59e6ff,#9d70ff,#ff60c9);box-shadow:0 0 20px #8b76ff99}.jobbody h3{font:700 25px "Space Grotesk"}.company{font-size:9px;color:#6ddfff;margin:5px 0 18px}.jobbody ul{padding-left:15px;color:#8793a7;font-size:9px;line-height:1.9}.jobbody li{margin-bottom:5px}.jobtags{display:flex;flex-wrap:wrap;gap:5px;margin-top:19px}.jobtags span{font-size:7px;color:#8ca4bd;border:1px solid #ffffff10;border-radius:20px;padding:5px 7px}
+
+.project{display:grid;grid-template-columns:1fr .92fr;overflow:hidden}.projectcopy{padding:38px}.projectcopy .number{font:500 8px "DM Mono";color:#66748a}.projectcopy h3{font:700 34px/1.05 "Space Grotesk";letter-spacing:-1px;margin:12px 0 14px}.projectcopy p{font-size:10px;line-height:1.85;color:#8692a5;margin-bottom:9px}.projectvisual{min-height:430px;border-left:1px solid #ffffff10;background:radial-gradient(circle at 50% 45%,#5c83ff18,transparent 52%),#070a11;position:relative;display:grid;place-items:center;overflow:hidden}.projectvisual:before{content:"";position:absolute;inset:-20%;background:linear-gradient(#7c9cff0b 1px,transparent 1px),linear-gradient(90deg,#7c9cff0b 1px,transparent 1px);background-size:34px 34px;transform:perspective(500px) rotateX(61deg) translateY(70px)}.architecture{position:relative;z-index:2;width:72%;display:grid;gap:9px}.abox{padding:13px;border:1px solid #ffffff18;border-radius:11px;text-align:center;background:#0b1320e8;font-size:7px;color:#93a6bd;box-shadow:0 14px 30px #0008}.abox b{display:block;font-size:8px;color:#fff;margin-bottom:4px}.aline{height:22px;width:1px;background:linear-gradient(#62e5ff,#9b70ff);margin:auto}.abox.final{border-color:#66e7a433}
+
+.skills{display:grid;grid-template-columns:repeat(3,1fr);gap:11px}.skill{padding:24px;min-height:180px;position:relative}.skill:after{content:"";position:absolute;right:0;top:0;width:90px;height:90px;background:radial-gradient(circle,#8a72ff16,transparent 70%)}.skillicon{width:42px;height:42px;border:1px solid #ffffff14;border-radius:12px;background:#ffffff07;display:grid;place-items:center;font-weight:800;color:#74e4ff;margin-bottom:16px}.skill h3{font:600 14px "Space Grotesk";margin-bottom:8px}.skill p{font-size:8px;color:#7f8b9f;line-height:1.8}
+
+.edu{display:grid;grid-template-columns:repeat(4,1fr);gap:11px}.eduitem{padding:23px;min-height:175px}.eduitem small{font:500 7px "DM Mono";color:#68758a}.eduitem h3{font:600 14px "Space Grotesk";margin:14px 0 7px}.eduitem p{font-size:8px;color:#7d899d;line-height:1.7}.score{display:inline-block;margin-top:14px;color:#75dfff;font:600 10px "Space Grotesk"}
+
+.contact{padding:75px 30px;text-align:center;position:relative;overflow:hidden;background:radial-gradient(circle at 50% 0,#657eff1f,transparent 45%),linear-gradient(145deg,#0d111d,#080a10)}.contact:before,.contact:after{content:"";position:absolute;border:1px solid #ffffff0b;border-radius:50%;left:50%;top:-280px;transform:translateX(-50%);pointer-events:none}.contact:before{width:580px;height:580px}.contact:after{width:780px;height:780px}.contact>*{position:relative;z-index:2}.contact h2{font:700 clamp(40px,6vw,70px)/.95 "Space Grotesk";letter-spacing:-3px;margin:13px 0}.contact h2 span{background:linear-gradient(90deg,#62e5ff,#9b72ff,#ff60c9);-webkit-background-clip:text;color:transparent}.contact p{font-size:10px;color:#7e8a9e}.contactactions{display:flex;justify-content:center;flex-wrap:wrap;gap:8px;margin:25px 0}.details{display:flex;justify-content:center;gap:17px;flex-wrap:wrap;font-size:8px;color:#68758b}
+footer{padding:26px 0;border-top:1px solid #ffffff0d;color:#606d80;font-size:7px}.footerin{display:flex;justify-content:space-between;gap:12px}
+
+.reveal{opacity:0;transform:translateY(28px);transition:.85s var(--ease)}.reveal.show{opacity:1;transform:none}
+
+@media(max-width:1000px){
+ .hero-grid{grid-template-columns:1fr}.scene{height:540px}.bento{grid-template-columns:1fr 1fr}.about{grid-row:auto;grid-column:span 2}.project{grid-template-columns:1fr}.projectvisual{border-left:0;border-top:1px solid #ffffff10}.skills{grid-template-columns:1fr 1fr}.edu{grid-template-columns:1fr 1fr}
+}
+@media(max-width:720px){
+ .links{display:none;position:absolute;top:68px;left:0;right:0;padding:15px;flex-direction:column;background:#080a10f5;border:1px solid #ffffff13;border-radius:15px}.links.open{display:flex}.navbtn{display:none}.menu{display:block}.hero{padding-top:125px}.hero h1{font-size:56px;letter-spacing:-4px}.facts{gap:17px}.scene{height:450px}.float{transform:scale(.85)}.fjava{left:2%}.freact{right:1%}.fspring{left:0}.fdb{right:0}.fapi{right:25%}.fai{left:27%}.bento{grid-template-columns:1fr}.about{grid-column:auto}.skills{grid-template-columns:1fr}.edu{grid-template-columns:1fr 1fr}.job{grid-template-columns:1fr}.jobbody{border-left:0;padding-left:0}.jobbody:before{display:none}.section{padding:90px 0}.head{display:block}.head p{margin-top:12px}.stackrow{grid-template-columns:1fr}.footerin{flex-direction:column}
+}
+@media(max-width:450px){
+ .wrap{width:90%}.hero h1{font-size:48px}.role{font-size:18px}.scene{height:390px}.stage{border-radius:23px}.core3d{transform:translate(-50%,-50%) scale(.82)}.float{transform:scale(.7)}.fjava{top:20%;left:-7%}.freact{top:28%;right:-8%}.fspring{bottom:24%;left:-8%}.fdb{bottom:17%;right:-8%}.fapi{top:8%;right:14%}.fai{bottom:2%;left:23%}.edu{grid-template-columns:1fr}.contact{padding:58px 18px}
+}
+
+/* ===== PREMIUM CINEMATIC BACKGROUND ===== */
+body:before{content:"";position:fixed;inset:0;z-index:-19;pointer-events:none;background:
+radial-gradient(circle at 12% 18%,#00e5ff13 0 2px,transparent 3px),
+radial-gradient(circle at 79% 13%,#ff62d20f 0 2px,transparent 3px),
+radial-gradient(circle at 68% 76%,#8a6dff10 0 2px,transparent 3px);
+background-size:170px 190px,230px 210px,190px 230px;animation:starDrift 18s linear infinite}
+@keyframes starDrift{to{background-position:170px 190px,-230px 210px,190px -230px}}
+.aurora{position:fixed;inset:-25%;z-index:-18;pointer-events:none;filter:blur(65px);opacity:.22;transform:rotate(-12deg)}
+.aurora-a{background:conic-gradient(from 30deg,transparent,#25dfff44,transparent 28%,#8d63ff3c,transparent 58%,#ff4dc62e,transparent 78%);animation:aur1 16s ease-in-out infinite alternate}
+.aurora-b{background:conic-gradient(from 190deg,transparent,#ff9b4d30,transparent 25%,#40ffb02c,transparent 55%,#5b8dff35,transparent);animation:aur2 21s ease-in-out infinite alternate-reverse}
+.aurora-c{background:radial-gradient(ellipse at center,#7b65ff24,transparent 48%);animation:aur3 11s ease-in-out infinite alternate}
+@keyframes aur1{to{transform:rotate(22deg) scale(1.15) translate(3%, -2%)}}
+@keyframes aur2{to{transform:rotate(-28deg) scale(1.2) translate(-3%, 2%)}}
+@keyframes aur3{to{transform:scale(1.25);opacity:.35}}
+.light-sweep{position:fixed;inset:-30%;z-index:-16;pointer-events:none;background:linear-gradient(115deg,transparent 42%,#ffffff05 49%,#5eeaff0a 51%,transparent 58%);transform:rotate(-7deg);animation:sweep 14s ease-in-out infinite}
+@keyframes sweep{0%,20%{transform:translateX(-25%) rotate(-7deg)}70%,100%{transform:translateX(25%) rotate(-7deg)}}
+.perspective-floor{position:fixed;left:-10%;right:-10%;bottom:-35%;height:65%;z-index:-16;pointer-events:none;background:
+linear-gradient(#6d8fff12 1px,transparent 1px),linear-gradient(90deg,#6d8fff12 1px,transparent 1px);
+background-size:70px 70px;transform:perspective(600px) rotateX(68deg);mask-image:linear-gradient(to top,black,transparent 80%);animation:floorMove 10s linear infinite}
+@keyframes floorMove{to{background-position:0 70px,70px 0}}
+.bg-orb{opacity:.26;filter:blur(95px);animation:orbFloat 12s ease-in-out infinite alternate}
+.orb1{animation-delay:-2s}.orb2{animation-delay:-6s}.orb3{animation-delay:-9s}
+@keyframes orbFloat{to{transform:translate3d(4vw,-3vh,0) scale(1.13)}}
+
+/* ===== HERO IDENTITY ORB ===== */
+.hero-grid>div:first-child{position:relative}
+.identity-orb{position:absolute;width:170px;height:170px;right:2%;top:-48px;z-index:-1;opacity:.72;filter:saturate(1.15)}
+.orb-glow{position:absolute;inset:20px;border-radius:50%;background:radial-gradient(circle,#70eaff28,#8c68ff16 45%,transparent 70%);filter:blur(8px);animation:pulseOrb 4s ease-in-out infinite}
+.orb-ring{position:absolute;left:50%;top:50%;border:1px solid #72e7ff55;border-radius:50%;transform:translate(-50%,-50%);box-shadow:0 0 25px #6c80ff18}
+.rr1{width:135px;height:135px;transform:translate(-50%,-50%) rotateX(64deg) rotateZ(25deg);animation:spinRing 8s linear infinite}
+.rr2{width:150px;height:150px;transform:translate(-50%,-50%) rotateY(66deg) rotateZ(-25deg);border-color:#ff65cc44;animation:spinRing2 10s linear infinite}
+.orb-face{position:absolute;left:50%;top:50%;width:74px;height:74px;transform:translate(-50%,-50%);border-radius:50%;display:grid;place-items:center;text-align:center;background:radial-gradient(circle at 35% 25%,#233f72,#101425 58%,#080a11);border:1px solid #ffffff22;box-shadow:inset 0 0 25px #6d85ff22,0 0 45px #6d7cff22}
+.orb-face span{font:700 22px "Space Grotesk";background:linear-gradient(135deg,#fff,#61e7ff,#bd73ff);-webkit-background-clip:text;color:transparent}.orb-face small{display:block;font:500 5px "DM Mono";color:#71809a;letter-spacing:1.5px;margin-top:-20px}
+.orb-dot{position:absolute;width:6px;height:6px;border-radius:50%;background:#66eaff;box-shadow:0 0 14px #66eaff}.d1{left:10px;top:65px}.d2{right:12px;top:28px;background:#ff69ce;box-shadow:0 0 14px #ff69ce}.d3{right:34px;bottom:13px;background:#75e6a2;box-shadow:0 0 14px #75e6a2}
+@keyframes spinRing{to{transform:translate(-50%,-50%) rotateX(64deg) rotateZ(385deg)}}@keyframes spinRing2{to{transform:translate(-50%,-50%) rotateY(66deg) rotateZ(-385deg)}}@keyframes pulseOrb{50%{transform:scale(1.13);opacity:.7}}
+.tag i svg{width:12px;height:12px;stroke:currentColor;fill:none;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round;vertical-align:middle}
+.tag i:empty{display:none}.tag i:empty + *{margin-left:0}
+.tag i{flex:none}
+
+/* More depth on cards */
+.panel{position:relative;transform-style:preserve-3d;transition:transform .35s var(--ease),border-color .35s,box-shadow .35s}
+.panel:hover{transform:translateY(-4px);border-color:#ffffff20;box-shadow:0 30px 85px #0008,0 0 45px #6d7dff09}
+.skill:hover .skillicon,.mini:hover .mi{transform:translateZ(12px) scale(1.05)}
+.skillicon,.mi{transition:.35s var(--ease)}
+</style>
+</head>
+<body>
+<canvas id="particles"></canvas><div class="grid-bg"></div><div class="noise"></div>
+<div class="bg-orb orb1"></div><div class="bg-orb orb2"></div><div class="bg-orb orb3"></div>
+<div class="aurora aurora-a"></div><div class="aurora aurora-b"></div><div class="aurora aurora-c"></div>
+<div class="light-sweep"></div><div class="perspective-floor"></div>
+
+<header class="nav"><div class="navin">
+ <a class="brand" href="#home"><span class="brandmark">RL</span><span><b>RAM LOKESH</b><small>SOFTWARE ENGINEER</small></span></a>
+ <nav class="links" id="links"><a href="#home">Home</a><a href="#about">About</a><a href="#experience">Experience</a><a href="#projects">Projects</a><a href="#skills">Skills</a><a href="#education">Education</a><a href="#contact">Contact</a></nav>
+ <a class="navbtn" href="https://lnkd.in/gJjPEfSc" target="_blank">DOWNLOAD RESUME ↗</a><button class="menu" id="menu">☰</button>
+</div></header>
+
+<main id="home">
+<section class="hero"><div class="wrap hero-grid">
+ <div class="reveal">
+  <div class="eyebrow"><span class="live"><i></i>OPEN TO WORK</span><span class="rolechip">JAVA · REACT · FULL STACK</span></div>
+  <div class="identity-orb" aria-hidden="true">
+  <div class="orb-glow"></div><div class="orb-ring rr1"></div><div class="orb-ring rr2"></div>
+  <div class="orb-face"><span>RL</span><small>ENGINEER</small></div>
+  <div class="orb-dot d1"></div><div class="orb-dot d2"></div><div class="orb-dot d3"></div>
+</div><div class="label">SOFTWARE ENGINEER · HEALTHCARE APPLICATIONS</div>
+  <h1>Hi, I'm<br><span class="rainbow">Ram Lokesh</span> <span class="wave">👋</span></h1>
+  <div class="role"><b>Java Full Stack Developer</b> <span>· React.js</span></div>
+  <p class="lead">Java Full Stack Developer with 1+ years of professional experience building scalable healthcare applications across frontend, backend, security, APIs and PostgreSQL data workflows.</p>
+  <div class="targets"><span class="target">◈ <strong>Java Full Stack Developer</strong></span><span class="target">◈ <strong>Java Backend Developer</strong></span><span class="target">⚛ <strong>React.js / Frontend Developer</strong></span></div>
+  <div class="actions"><a class="btn primary" href="#contact">LET'S CONNECT →</a><a class="btn secondary" href="https://lnkd.in/gJjPEfSc" target="_blank">VIEW RESUME ↓</a><a class="social" href="mailto:ramlokesh090@gmail.com">✉</a><a class="social" href="https://www.linkedin.com/" target="_blank">in</a><a class="social" href="https://github.com/" target="_blank">⌘</a></div>
+  <div class="facts"><div class="fact"><b>1+</b><span>Years Experience</span></div><div class="fact"><b>8+</b><span>Modules Delivered</span></div><div class="fact"><b>200+</b><span>Problems Solved</span></div><div class="fact"><b>3</b><span>Role Tracks</span></div></div>
+ </div>
+
+ <div class="scene reveal" id="scene">
+  <div class="stage" id="stage">
+   <div class="stagetop"><span>RL_ENGINEERING_SYSTEM // 3D</span><span class="signal"><i></i><i></i><i></i></span></div>
+   <div class="ring r1"></div><div class="ring r2"></div><div class="ring r3"></div>
+   <i class="beam b1"></i><i class="beam b2"></i><i class="beam b3"></i><i class="beam b4"></i>
+   <div class="core3d"><div class="cube"></div><div class="corelabel"><div><b>RL</b><small>FULL STACK</small></div></div></div>
+   <div class="float fjava"><span class="icon">☕</span><span><b>Java</b><small>Backend</small></span></div>
+   <div class="float freact"><span class="icon">⚛</span><span><b>React.js</b><small>Frontend</small></span></div>
+   <div class="float fspring"><span class="icon">●</span><span><b>Spring Boot</b><small>Security · APIs</small></span></div>
+   <div class="float fdb"><span class="icon">DB</span><span><b>PostgreSQL</b><small>Data Layer</small></span></div>
+   <div class="float fapi"><span class="icon">{ }</span><span><b>REST · GraphQL</b><small>Integration</small></span></div>
+   <div class="float fai"><span class="icon">AI</span><span><b>AI Assisted</b><small>Development</small></span></div>
+   <div class="hud"><span>SYSTEM <strong>ONLINE</strong></span><span class="scan"><i></i></span><span>3D CORE <strong>ACTIVE</strong></span></div>
+  </div>
+ </div>
+</div></section>
+
+<section id="about" class="section"><div class="wrap">
+ <div class="head reveal"><div><div class="label">01 · PROFILE</div><h2>Built for the modern stack.</h2></div><p>A clean enterprise presentation of the capabilities and technologies represented in my professional experience.</p></div>
+ <div class="bento">
+  <article class="panel about reveal"><div class="label">ENGINEERING APPROACH</div><h3>Frontend precision.<br>Backend reliability.<br>Full-stack ownership.</h3><p>I work across React.js and TypeScript interfaces, Java and Spring Boot services, secure JWT/RBAC flows, REST/GraphQL integrations and PostgreSQL data. My professional experience includes healthcare workflows, responsive dashboards, reusable components and production-oriented debugging and delivery.</p><div class="aboutquote">“Reusable components · secure APIs · clean data flows · responsive experiences”</div></article>
+  <article class="panel mini accent-cyan reveal"><div class="mi">⚡</div><h3>Frontend Engineering</h3><p>React.js, TypeScript, JavaScript ES6+, Redux Toolkit, Hooks, Context API, responsive design and reusable components.</p></article>
+  <article class="panel mini accent-pink reveal"><div class="mi">⌘</div><h3>Backend Engineering</h3><p>Java, Spring Boot, Spring MVC, Spring Data JPA, Hibernate, Spring Security, JWT and RESTful APIs.</p></article>
+  <article class="panel mini accent-green reveal"><div class="mi">◈</div><h3>Data & Integration</h3><p>PostgreSQL, SQL, GraphQL, JSON, Axios, Fetch API, Stripe and PayPal integrations.</p></article>
+  <article class="panel mini accent-orange reveal"><div class="mi">AI</div><h3>AI-Assisted Development</h3><p>Efficient use of ChatGPT, Claude, Gemini, GitHub Copilot and DeepSeek to support development workflows.</p></article>
+ </div>
+ <div class="panel stack reveal">
+  <div class="stacktitle"><b>TECHNOLOGY CONSTELLATION</b><span>KEY SKILLS · RESUME ALIGNED</span></div>
+  <div class="stackrow"><label>Languages</label><div class="tags"><span class="tag"><i><svg viewBox='0 0 24 24' aria-hidden='true'><path d='M4 5h13v7a5 5 0 0 1-5 5H9a5 5 0 0 1-5-5V5Zm13 2h2a3 3 0 0 1 0 6h-2'/><path d='M7 21h10M9 17v4'/></svg></i>Java</span><span class="tag"><i><svg viewBox='0 0 24 24' aria-hidden='true'><path d='M4 4h16v16H4z'/><path d='M9 15.5c.5 1 1.3 1.5 2.4 1.5 1.1 0 1.8-.5 1.8-1.3 0-.8-.5-1.1-1.7-1.6l-.7-.3c-1.6-.7-2.6-1.5-2.6-3.1 0-1.6 1.3-2.7 3.1-2.7 1.4 0 2.4.5 3 1.7l-1.6 1c-.4-.7-.8-1-1.4-1-.7 0-1.1.4-1.1.9 0 .6.4.9 1.4 1.3l.7.3c1.9.8 2.9 1.7 2.9 3.4 0 1.9-1.5 3-3.7 3-2 0-3.3-1-3.9-2.3z'/></svg></i>JavaScript</span><span class="tag"><i><svg viewBox='0 0 24 24' aria-hidden='true'><path d='M4 4h16v16H4z'/><path d='M7 9h7M10.5 9v7M15.5 15.8c.5.5 1.1.8 1.8.8.7 0 1.2-.3 1.2-.8 0-.4-.3-.6-1.1-1l-.5-.2c-1.1-.5-1.8-1.1-1.8-2.2 0-1.2 1-2 2.3-2 1 0 1.7.4 2.2 1.2'/></svg></i>TypeScript</span><span class="tag"><i><svg viewBox='0 0 24 24' aria-hidden='true'><ellipse cx='12' cy='6' rx='7' ry='3'/><path d='M5 6v6c0 1.7 3.1 3 7 3s7-1.3 7-3V6M5 12v6c0 1.7 3.1 3 7 3s7-1.3 7-3v-6'/></svg></i>SQL</span><span class="tag"><i><svg viewBox='0 0 24 24' aria-hidden='true'><path d='M6 4h12M7 4v16M17 4v16M6 12h12'/></svg></i>HTML5</span><span class="tag"><i><svg viewBox='0 0 24 24' aria-hidden='true'><path d='M5 5h14v14H5z'/><path d='M8 8h8M8 12h8M8 16h8'/></svg></i>CSS3</span></div></div>
+  <div class="stackrow"><label>Frontend</label><div class="tags"><span class="tag"><i><svg viewBox='0 0 24 24' aria-hidden='true'><ellipse cx='12' cy='12' rx='9' ry='4'/><ellipse cx='12' cy='12' rx='9' ry='4' transform='rotate(60 12 12)'/><ellipse cx='12' cy='12' rx='9' ry='4' transform='rotate(120 12 12)'/><circle cx='12' cy='12' r='1.8'/></svg></i>React.js</span><span class="tag"><i><svg viewBox='0 0 24 24' aria-hidden='true'><circle cx='12' cy='12' r='8'/><path d='M8 17c3-4 5-7 8-10M7 8c3 1 6 4 10 8'/></svg></i>React Native</span><span class="tag"><i><svg viewBox='0 0 24 24' aria-hidden='true'><path d='M5 19V5l14 14V5'/></svg></i>Next.js</span><span class="tag"><i><svg viewBox='0 0 24 24' aria-hidden='true'><path d='M5 6h14v12H5z'/><path d='M8 10h8M8 14h5'/></svg></i>Redux</span><span class="tag"><i><svg viewBox='0 0 24 24' aria-hidden='true'><path d='M6 7h12M6 12h8M6 17h12'/><circle cx='18' cy='12' r='2'/></svg></i>Redux Toolkit</span><span class="tag"><i><svg viewBox='0 0 24 24' aria-hidden='true'><path d='M5 5v14M19 5v14M5 12h14'/></svg></i>React Hooks</span><span class="tag"><i><svg viewBox='0 0 24 24' aria-hidden='true'><path d='M5 5h14v14H5z'/><path d='M8 9h8M8 12h8M8 15h5'/></svg></i>Context API</span><span class="tag"><i><svg viewBox='0 0 24 24' aria-hidden='true'><path d='M4 12c4-6 8 6 16 0-4 6-8-6-16 0Z'/></svg></i>Tailwind CSS</span><span class="tag"><i><svg viewBox='0 0 24 24' aria-hidden='true'><path d='M5 7h14M12 7v12'/></svg></i>Tamagui</span></div></div>
+  <div class="stackrow"><label>Backend</label><div class="tags"><span class="tag"><i><svg viewBox='0 0 24 24' aria-hidden='true'><path d='M4 5h13v7a5 5 0 0 1-5 5H9a5 5 0 0 1-5-5V5Zm13 2h2a3 3 0 0 1 0 6h-2'/><path d='M7 21h10M9 17v4'/></svg></i>Spring Boot</span><span class="tag"><i><svg viewBox='0 0 24 24' aria-hidden='true'><path d='M5 19V5l7 9 7-9v14'/></svg></i>Spring MVC</span><span class="tag"><i><svg viewBox='0 0 24 24' aria-hidden='true'><path d='M7 5v9a5 5 0 0 0 10 0V5'/></svg></i>Spring Data JPA</span><span class="tag"><i><svg viewBox='0 0 24 24' aria-hidden='true'><path d='M5 5v14M19 5v14M5 12h14'/></svg></i>Hibernate</span><span class="tag"><i><svg viewBox='0 0 24 24' aria-hidden='true'><path d='m5 13 4 4L19 7'/></svg></i>Spring Security</span><span class="tag"><i><svg viewBox='0 0 24 24' aria-hidden='true'><path d='m12 3 7 3v5c0 5-3 8-7 10-4-2-7-5-7-10V6l7-3Z'/><path d='m9 12 2 2 4-5'/></svg></i>JWT</span><span class="tag"><i><svg viewBox='0 0 24 24' aria-hidden='true'><path d='M6 8h12M6 16h12M8 5l-3 3 3 3M16 13l3 3-3 3'/></svg></i>REST APIs</span><span class="tag"><i><svg viewBox='0 0 24 24' aria-hidden='true'><circle cx='12' cy='12' r='8'/><path d='M12 12h7M19 12a7 7 0 0 0-2-5'/></svg></i>GraphQL</span><span class="tag"><i><svg viewBox='0 0 24 24' aria-hidden='true'><path d='M5 19V5l14 14V5'/></svg></i>Node.js</span><span class="tag"><i><svg viewBox='0 0 24 24' aria-hidden='true'><path d='M5 19V5l7 9 7-9v14'/></svg></i>Maven</span></div></div>
+  <div class="stackrow"><label>Tools · AI</label><div class="tags"><span class="tag"><i><svg viewBox='0 0 24 24' aria-hidden='true'><ellipse cx='12' cy='6' rx='7' ry='3'/><path d='M5 6v12c0 1.7 3.1 3 7 3s7-1.3 7-3V6'/><path d='M5 12c0 1.7 3.1 3 7 3s7-1.3 7-3'/></svg></i>PostgreSQL</span><span class="tag"><i><svg viewBox='0 0 24 24' aria-hidden='true'><path d='m12 4 8 8-8 8-8-8 8-8Z'/><path d='m9 12 2 2 4-4'/></svg></i>Git</span><span class="tag"><i><svg viewBox='0 0 24 24' aria-hidden='true'><path d='M8 8v8a4 4 0 1 0 4-4H8a4 4 0 1 0 4 4V8a4 4 0 1 0-4 4h8a4 4 0 1 0-4-4'/></svg></i>GitHub</span><span class="tag"><i><svg viewBox='0 0 24 24' aria-hidden='true'><path d='M5 19 12 5l7 14M8 14h8'/></svg></i>Azure DevOps</span><span class="tag"><i><svg viewBox='0 0 24 24' aria-hidden='true'><path d='M5 19V5h7a4 4 0 0 1 0 8H5'/></svg></i>Postman</span><span class="tag"><i><svg viewBox='0 0 24 24' aria-hidden='true'><path d='M7 7h10v10H7z'/><path d='M9 3v4M15 3v4M9 17v4M15 17v4M3 9h4M3 15h4M17 9h4M17 15h4'/><path d='M10 12h4'/></svg></i>ChatGPT</span><span class="tag"><i><svg viewBox='0 0 24 24' aria-hidden='true'><path d='M7 7h10v10H7z'/><path d='M9 3v4M15 3v4M9 17v4M15 17v4M3 9h4M3 15h4M17 9h4M17 15h4'/><path d='M10 12h4'/></svg></i>Claude</span><span class="tag"><i><svg viewBox='0 0 24 24' aria-hidden='true'><path d='M7 7h10v10H7z'/><path d='M9 3v4M15 3v4M9 17v4M15 17v4M3 9h4M3 15h4M17 9h4M17 15h4'/><path d='M10 12h4'/></svg></i>Gemini</span><span class="tag"><i><svg viewBox='0 0 24 24' aria-hidden='true'><path d='M7 7h10v10H7z'/><path d='M9 3v4M15 3v4M9 17v4M15 17v4M3 9h4M3 15h4M17 9h4M17 15h4'/><path d='M10 12h4'/></svg></i>GitHub Copilot</span><span class="tag"><i><svg viewBox='0 0 24 24' aria-hidden='true'><path d='M7 7h10v10H7z'/><path d='M9 3v4M15 3v4M9 17v4M15 17v4M3 9h4M3 15h4M17 9h4M17 15h4'/><path d='M10 12h4'/></svg></i>DeepSeek</span></div></div>
+ </div>
+</div></section>
+
+<section id="experience" class="section"><div class="wrap">
+ <div class="head reveal"><div><div class="label">02 · EXPERIENCE</div><h2>Production experience.</h2></div><p>Hands-on software engineering across application modules, APIs, UI, security, databases and integrations.</p></div>
+ <article class="panel timeline reveal"><div class="job">
+  <div class="date">03 MAY 2025<br>—<br>06 MAY 2026<br><br>HYDERABAD</div>
+  <div class="jobbody"><h3>Software Engineer</h3><div class="company">Cloudo Solutions Pvt Ltd · Hyderabad</div>
+   <ul><li>Developed scalable healthcare web applications using Java, Spring Boot, React.js, TypeScript, Redux Toolkit and PostgreSQL.</li><li>Built and maintained 8+ application modules including onboarding, dashboards, recruitment workflows, appointment management and payment features.</li><li>Developed responsive interfaces with React.js, React Hooks, Redux Toolkit, TypeScript, HTML5, CSS3 and JavaScript ES6+.</li><li>Implemented RESTful APIs and backend business logic using Spring Boot, Spring MVC, Spring Data JPA and Hibernate.</li><li>Worked with PostgreSQL for database design, CRUD operations, SQL queries and schema management.</li><li>Implemented Spring Security with JWT authentication and role-based access control.</li><li>Integrated Stripe, PayPal, REST APIs and GraphQL and developed reusable React components.</li><li>Collaborated using Git, Azure DevOps and Postman in an Agile development environment.</li></ul>
+   <div class="jobtags"><span>Java</span><span>Spring Boot</span><span>React.js</span><span>TypeScript</span><span>PostgreSQL</span><span>JWT</span><span>GraphQL</span><span>Agile</span></div>
+  </div>
+ </div></article>
+</div></section>
+
+<section id="projects" class="section"><div class="wrap">
+ <div class="head reveal"><div><div class="label">03 · FEATURED PROJECT</div><h2>LiveBest Healthcare.</h2></div><p>A multi-role healthcare platform represented as an enterprise system architecture.</p></div>
+ <article class="panel project reveal">
+  <div class="projectcopy"><div class="number">01 // ENTERPRISE HEALTHCARE PLATFORM</div><h3>One platform.<br>Multiple workflows.</h3><p>LiveBest streamlines healthcare onboarding, appointments, hiring workflows, service management, subscriptions and payment processing.</p><p>Hospitals can onboard healthcare professionals, manage services, post jobs and assign doctors to patient appointments. Patients and care recipients can register, select services, book appointments and access healthcare support.</p><div class="tags" style="margin-top:19px"><span class="tag"><i><svg viewBox='0 0 24 24' aria-hidden='true'><ellipse cx='12' cy='12' rx='9' ry='4'/><ellipse cx='12' cy='12' rx='9' ry='4' transform='rotate(60 12 12)'/><ellipse cx='12' cy='12' rx='9' ry='4' transform='rotate(120 12 12)'/><circle cx='12' cy='12' r='1.8'/></svg></i>React.js</span><span class="tag"><i><svg viewBox='0 0 24 24' aria-hidden='true'><path d='M4 4h16v16H4z'/><path d='M7 9h7M10.5 9v7M15.5 15.8c.5.5 1.1.8 1.8.8.7 0 1.2-.3 1.2-.8 0-.4-.3-.6-1.1-1l-.5-.2c-1.1-.5-1.8-1.1-1.8-2.2 0-1.2 1-2 2.3-2 1 0 1.7.4 2.2 1.2'/></svg></i>TypeScript</span><span class="tag"><i><svg viewBox='0 0 24 24' aria-hidden='true'><path d='M5 6h14v12H5z'/><path d='M8 10h8M8 14h5'/></svg></i>Redux Toolkit</span><span class="tag"><i><svg viewBox='0 0 24 24' aria-hidden='true'><path d='M4 5h13v7a5 5 0 0 1-5 5H9a5 5 0 0 1-5-5V5Zm13 2h2a3 3 0 0 1 0 6h-2'/><path d='M7 21h10M9 17v4'/></svg></i>Java</span><span class="tag"><i><svg viewBox='0 0 24 24' aria-hidden='true'><path d='M6 7h12M6 12h12M6 17h8'/><circle cx='18' cy='17' r='2'/></svg></i>Spring Boot</span><span class="tag"><i><svg viewBox='0 0 24 24' aria-hidden='true'><path d='m12 3 7 3v5c0 5-3 8-7 10-4-2-7-5-7-10V6l7-3Z'/><path d='m9 12 2 2 4-5'/></svg></i>Security</span><span class="tag"><i><svg viewBox='0 0 24 24' aria-hidden='true'><ellipse cx='12' cy='6' rx='7' ry='3'/><path d='M5 6v12c0 1.7 3.1 3 7 3s7-1.3 7-3V6'/><path d='M5 12c0 1.7 3.1 3 7 3s7-1.3 7-3'/></svg></i>PostgreSQL</span><span class="tag"><i><svg viewBox='0 0 24 24' aria-hidden='true'><circle cx='12' cy='12' r='8'/><path d='M12 12h7M19 12a7 7 0 0 0-2-5'/></svg></i>GraphQL</span><span class="tag"><i><svg viewBox='0 0 24 24' aria-hidden='true'><path d='M12 3v18M16 7c-.7-1-2-1.6-3.8-1.6C9.9 5.4 8 6.5 8 8.2c0 2.1 2.2 2.5 4.4 2.9 2.1.4 3.6.8 3.6 2.7 0 1.8-1.7 2.9-4 2.9-1.8 0-3.3-.6-4.1-1.8'/></svg></i>Stripe</span><span class="tag"><i><svg viewBox='0 0 24 24' aria-hidden='true'><path d='M12 3v18M16 7c-.7-1-2-1.6-3.8-1.6C9.9 5.4 8 6.5 8 8.2c0 2.1 2.2 2.5 4.4 2.9 2.1.4 3.6.8 3.6 2.7 0 1.8-1.7 2.9-4 2.9-1.8 0-3.3-.6-4.1-1.8'/></svg></i>PayPal</span></div></div>
+  <div class="projectvisual"><div class="architecture"><div class="abox"><b>REACT.JS · TYPESCRIPT</b>Responsive role-based interfaces</div><div class="aline"></div><div class="abox"><b>REST APIs · GRAPHQL</b>Application communication & integrations</div><div class="aline"></div><div class="abox"><b>SPRING BOOT · SECURITY · JPA</b>Business logic · JWT · RBAC</div><div class="aline"></div><div class="abox final"><b>POSTGRESQL · PAYMENTS</b>Relational data · Stripe · PayPal</div></div></div>
+ </article>
+</div></section>
+
+<section id="skills" class="section"><div class="wrap">
+ <div class="head reveal"><div><div class="label">04 · CAPABILITIES</div><h2>The complete skill map.</h2></div><p>Organized for recruiters looking for frontend, backend or Java full-stack capability.</p></div>
+ <div class="skills">
+  <article class="panel skill reveal"><div class="skillicon">☕</div><h3>Java & Spring Ecosystem</h3><p>Java · OOP · Spring Boot · Spring MVC · Spring Data JPA · Hibernate · Spring Security · JWT · Maven · Microservices (Basics)</p></article>
+  <article class="panel skill reveal"><div class="skillicon">⚛</div><h3>React & Frontend</h3><p>React.js · React Native · Next.js · Hooks · Functional Components · TypeScript · JavaScript ES6+ · Redux · Redux Toolkit · Context API</p></article>
+  <article class="panel skill reveal"><div class="skillicon">UI</div><h3>UI Engineering</h3><p>HTML5 · CSS3 · Tailwind CSS · Tamagui · Responsive Web Design · reusable components · responsive dashboards</p></article>
+  <article class="panel skill reveal"><div class="skillicon">{ }</div><h3>API & Integration</h3><p>REST APIs · GraphQL · JSON · Axios · Fetch API · API testing · third-party services · Stripe · PayPal</p></article>
+  <article class="panel skill reveal"><div class="skillicon">DB</div><h3>Database & SQL</h3><p>PostgreSQL · SQL · database design · CRUD operations · schema management · SQL query optimization</p></article>
+  <article class="panel skill reveal"><div class="skillicon">AI</div><h3>Engineering Tools & AI</h3><p>Git · GitHub · Azure DevOps · Postman · IntelliJ IDEA · VS Code · Eclipse · ChatGPT · Claude · Gemini · Copilot · DeepSeek</p></article>
+ </div>
+</div></section>
+
+<section id="education" class="section"><div class="wrap">
+ <div class="head reveal"><div><div class="label">05 · EDUCATION</div><h2>Academic foundation.</h2></div></div>
+ <div class="edu">
+  <article class="panel eduitem reveal"><small>2021 — 2025 · GUNTUR</small><h3>Bachelor of Technology</h3><p>KKR & KSR Institute Of Technology and Sciences</p><span class="score">8.69 CGPA</span></article>
+  <article class="panel eduitem reveal"><small>2019 — 2021 · RAJAHMUNDRY</small><h3>Intermediate · MPC</h3><p>Tirumala Junior College</p><span class="score">97%</span></article>
+  <article class="panel eduitem reveal"><small>CERTIFICATION</small><h3>React JS · MakeSkilled</h3><p>Practical frontend development and modern UI concepts.</p></article>
+  <article class="panel eduitem reveal"><small>NPTEL</small><h3>Java & Python</h3><p>Programming and computer science fundamentals.</p></article>
+ </div>
+</div></section>
+
+<section id="contact" class="section"><div class="wrap"><article class="panel contact reveal">
+ <div class="label">06 · AVAILABLE FOR OPPORTUNITIES</div><h2>Let's build the<br><span>next thing.</span></h2><p>Open to Java Full Stack, Java Backend, Spring Boot, React.js and Frontend opportunities.</p>
+ <div class="contactactions"><a class="btn primary" href="mailto:ramlokesh090@gmail.com">EMAIL ME →</a><a class="btn secondary" href="tel:+918555082203">CALL ME</a><a class="btn secondary" href="https://lnkd.in/gJjPEfSc" target="_blank">RESUME ↗</a></div>
+ <div class="details"><span>ramlokesh090@gmail.com</span><span>+91 85550 82203</span><span>Hyderabad · Bengaluru · Pune · Chennai · Mumbai · Remote</span></div>
+</article></div></section>
+</main>
+<footer><div class="wrap footerin"><span>RAM LOKESH · SOFTWARE ENGINEER</span><span>Java · Spring Boot · React.js · TypeScript · PostgreSQL</span><span>© 2026</span></div></footer>
+
+<script>
+/* ====== PARTICLE / STARFIELD ENGINE ====== */
+const c=document.getElementById('particles'),x=c.getContext('2d');
+let W,H,dpr,pts=[],mx=0,my=0;
+function resize(){dpr=devicePixelRatio||1;W=innerWidth;H=innerHeight;c.width=W*dpr;c.height=H*dpr;c.style.width=W+'px';c.style.height=H+'px';x.setTransform(dpr,0,0,dpr,0,0);pts=Array.from({length:Math.min(170,Math.floor(W/7))},()=>({x:Math.random()*W,y:Math.random()*H,z:.15+Math.random()*.85,s:.2+Math.random()*1.1,v:(Math.random()-.5)*.08}))}
+resize();addEventListener('resize',resize);addEventListener('pointermove',e=>{mx=e.clientX/W-.5;my=e.clientY/H-.5});
+function draw(){x.clearRect(0,0,W,H);for(const p of pts){p.x+=p.v+mx*.04*p.z;p.y+=p.v+my*.04*p.z;if(p.x<0)p.x=W;if(p.x>W)p.x=0;if(p.y<0)p.y=H;if(p.y>H)p.y=0;x.beginPath();x.arc(p.x,p.y,p.s*p.z,0,Math.PI*2);x.fillStyle=`rgba(175,210,255,${.12+.42*p.z})`;x.fill()}requestAnimationFrame(draw)}draw();
+
+/* ====== 3D MOUSE PARALLAX ====== */
+const scene=document.getElementById('scene'),stage=document.getElementById('stage');
+scene.addEventListener('pointermove',e=>{const r=scene.getBoundingClientRect(),px=(e.clientX-r.left)/r.width-.5,py=(e.clientY-r.top)/r.height-.5;stage.style.transform=`rotateY(${px*5}deg) rotateX(${-py*5}deg)`});
+scene.addEventListener('pointerleave',()=>stage.style.transform='');
+
+/* ====== SCROLL REVEAL ====== */
+const io=new IntersectionObserver(entries=>entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('show')}),{threshold:.08});
+document.querySelectorAll('.reveal').forEach(e=>io.observe(e));
+
+/* ====== MOBILE NAV ====== */
+const menu=document.getElementById('menu'),links=document.getElementById('links');
+menu.addEventListener('click',()=>links.classList.toggle('open'));
+links.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>links.classList.remove('open')));
+/* ====== ENTERPRISE CARD TILT ====== */
+document.querySelectorAll('.panel:not(.contact)').forEach(card=>{
+ card.addEventListener('pointermove',e=>{
+   if(innerWidth<900)return;
+   const r=card.getBoundingClientRect(),px=(e.clientX-r.left)/r.width-.5,py=(e.clientY-r.top)/r.height-.5;
+   card.style.transform=`perspective(900px) rotateY(${px*2.2}deg) rotateX(${-py*2.2}deg) translateY(-4px)`;
+ });
+ card.addEventListener('pointerleave',()=>card.style.transform='');
+});
+
+</script>
+</body>
+</html>
